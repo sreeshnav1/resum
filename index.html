@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- AOS CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Main Section */
+        .main-section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f5f5f5;
+        }
+
+        .profile-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            max-width: 300px;
+            animation: fadeInLeft 2s;
+        }
+
+        .main-section h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            animation: fadeInRight 2s;
+        }
+
+        .btn-discover {
+            margin-top: 20px;
+            padding: 10px 20px;
+            animation: fadeInUp 2s;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            animation: fadeInDown 1s;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+        }
+
+        #skills {
+            padding: 50px 0;
+            background-color: #f9f9f9;
+        }
+
+        .skill {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+
+        /* Social Icons */
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            margin: 0 10px;
+            color: #007bff; /* Adjust color as needed */
+            text-decoration: none;
+            font-size: 1.5rem; /* Adjust size as needed */
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        .social-icon:hover {
+            color: #0056b3; /* Adjust hover color as needed */
+            transform: scale(1.2);
+        }
+
+        /* Projects Section */
+        .project-card {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+            overflow: hidden; /* Prevent overflow */
+            background-color: #fff;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .project-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-card.animate__animated.animate__fadeInUp {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Footer */
+        .footer {
+            padding: 20px 0;
+            background-color: #f5f5f5;
+            animation: fadeInUp 2s;
+        }
+
+        .footer .social-icons {
+            margin: 10px 0;
+        }
+
+        /* Custom Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 576px) {
+            .project-card {
+                margin: 10px 0; 
+                width: 100%; 
+            }
+
+            .project-card h3 {
+                font-size: 1.5rem; 
+            }
+
+            .project-card p {
+                font-size: 0.9rem; 
+            }
+        }
+        @media (min-width: 576px) {
+            .project-card {
+                flex: 1 1 calc(50% - 40px); 
+                margin: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container">
+            <a class="navbar-brand animate__animated animate__fadeInDown" href="#">SREESHNAV</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active animate__animated animate__fadeInDown" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link animate__animated animate__fadeInDown" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link animate__animated animate__fadeInDown" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link animate__animated animate__fadeInDown" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link animate__animated animate__fadeInDown" href="C:\Users\srees\OneDrive\Desktop\my-pro\Sreeshnav_T__Resume.pdf">Resume</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link animate__animated animate__fadeInDown" href="Contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Section -->
+    <section class="main-section text-center">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6" data-aos="fade-right">
+                    <img src="WhatsApp_Image_2024-10-17_at_7.35.13_PM-removebg-preview.png" alt="Profile Image" class="profile-image">
+                </div>
+                <div class="col-md-6" data-aos="fade-left">
+                    <p class="animate__animated animate__fadeInDown">THIS IS ME</p>
+                    <h1 class="animate__animated animate__fadeInUp">SREESHNAV T</h1>
+                    <div id="longParagraph" class="animate__animated animate__fadeInUp">
+                        <p>I'm a passionate software developer with a strong focus on creating innovative solutions. I specialize in web development, leveraging technologies like HTML, CSS, and JavaScript to build dynamic applications. My goal is to continuously learn and adapt to new technologies to deliver high-quality software.</p>
+                        <a href="#about" class="btn btn-primary btn-discover animate__animated animate__fadeInUp">Discover More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5 bg-light" data-aos="fade-up">
+        <div class="container">
+            <h2 class="text-center animate__animated animate__fadeInUp">About Me</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <p class="text-center animate__animated animate__fadeInUp">
+                        Hi, I'm <strong>Sreeshnav T</strong>, a passionate and dedicated software developer with a strong foundation in web development. 
+                        I specialize in the <strong>MERN stack</strong> and <strong>Django</strong>, crafting dynamic, user-friendly applications with HTML, CSS, JavaScript, and Python. 
+                        I'm currently based in Bridgton, gaining valuable experience through an internship. Having completed a diploma in Computer Engineering, I'm always seeking to enhance my skills and contribute to impactful projects. 
+                        My commitment to continuous learning keeps me at the forefront of evolving technologies, and I’m excited to collaborate on projects that make a difference.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Skills Section -->
+    <section id="skills" class="py-5 bg-light" data-aos="fade-up">
+        <div class="container">
+            <h2 class="text-center animate__animated animate__fadeInUp">My Skills</h2>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="mb-3 animate__animated animate__fadeInUp">
+                        <label for="html" class="form-label">HTML</label>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 95%;" aria-valuenow="95" 
+                                 aria-valuemin="0" aria-valuemax="100">95%</div>
+                        </div>
+                    </div>
+                    <div class="mb-3 animate__animated animate__fadeInUp">
+                        <label for="css" class="form-label">CSS</label>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80" 
+                                 aria-valuemin="0" aria-valuemax="100">80%</div>
+                        </div>
+                    </div>
+                    <div class="mb-3 animate__animated animate__fadeInUp">
+                        <label for="javascript" class="form-label">JavaScript</label>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 70%;" aria-valuenow="70" 
+                                 aria-valuemin="0" aria-valuemax="100">70%</div>
+                        </div>
+                    </div>
+                    <div class="mb-3 animate__animated animate__fadeInUp">
+                        <label for="python" class="form-label">Python</label>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 60%;" aria-valuenow="60" 
+                                 aria-valuemin="0" aria-valuemax="100">60%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-5 bg-light" data-aos="fade-up">
+        <div class="container">
+            <h2 class="text-center animate__animated animate__fadeInUp">My Projects</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="project-card animate__animated animate__fadeInUp" style="height: 100%;" data-aos="fade-up">
+                        <h3>Analog Clock</h3>
+                        <p>This project serves as an engaging way to showcase skills in web development, specifically in creating interactive and visually appealing user interfaces.</p>
+                        <a href="Analog%20Clock/index.html" target="_blank" class="btn btn-primary">View Project</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div style="height: 100%;" class="project-card animate__animated animate__fadeInUp" data-aos="fade-up">
+                        <h3>Project 2 Title</h3>
+                        <p>Description of Project 2.</p>
+                        <a href="ab/h.html" target="_blank" class="btn btn-primary">View Project</a>
+                    </div>
+                </div>
+                <!-- Add more project cards as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer text-center" data-aos="fade-up">
+        <div class="container">
+            <h5 class="animate__animated animate__fadeInUp">Connect with Me</h5>
+            <div class="social-icons animate__animated animate__fadeInUp">
+                <a href="https://www.facebook.com/" class="social-icon" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com/sreeshnav1" class="social-icon" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/" class="social-icon" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://wa.me/" class="social-icon" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- Initialize AOS -->
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+    </script>
+</body>
+</html>
